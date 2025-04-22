@@ -67,7 +67,7 @@
 #include <freertos/task.h>
 #include <Ticker.h>
 #include <Adafruit_LEDBackpack.h>
-#include "Matrix_16x8.h"
+#include "Matrix/Matrix_16x8.h"
 #include <Preferences.h>
 //-------------------------------------------------//
 
