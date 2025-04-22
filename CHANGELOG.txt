@@ -1,0 +1,17 @@
+RobotESP32IoT 0.0.4 - 2020.04.20
+* Cambios en los códigos de los Tema_Robot_IoT
+* Actualización en los archivos Robot_IoT.h y Robot_IoT.cpp
+
+RobotESP32IoT 0.0.3 - 2025-03-09 
+* Se actualizó para trabajar la creacion de objeto sin parametros
+* Se cambio  el archivo  Otto_IoT.h por Robot_IoT.h
+
+OttoESP32IoT 0.0.3 - versiones anteriores
+* Se agrego el  firmware del robot
+
+OttoESP32IoT 0.0.2 - 2024-07-26  
+* Se actualizó la nomenclatura a CamelCase en C++
+* Se agrego el archivo Matrix_16x8.h
+
+OttoESP32IoT 0.0.1 - 2024-01-05 
+* Se desarollo la librería
