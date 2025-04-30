@@ -22,10 +22,10 @@ bool adelante = 0;
 bool atras = 0;
 bool izquierda = 0;
 bool derecha = 0;
-bool walk_Forward = 0;
-bool walk_Backward = 0;
-bool turn_Right = 0;
-bool turn_Left = 0;
+bool _walk_Forward = 0;
+bool _walk_Backward = 0;
+bool _turn_Right = 0;
+bool _turn_Left = 0;
 unsigned int selector = 0;
 bool enable = 1;
 int velocidad = 5;
@@ -49,7 +49,7 @@ BlynkTimer Timer_Bateria;
 
 void setup() {
   //-------------------------------------------------//
-  //Configurar la PC comunicación serial a 9600 baud
+  //Configurar la comunicación serial a 9600 baudios
   Serial.begin(9600);
   //-------------------------------------------------//
 
@@ -225,11 +225,11 @@ void program_Biped() {
   //-------------------------------------------------//
   if (adelante) {
     ESP32Biped.walk_Forward(velocidad);
-    walk_Forward = 1;
+    _walk_Forward = 1;
   } else {
-    if (walk_Forward) {
+    if (_walk_Forward) {
       ESP32Biped.standby_Mode();
-      walk_Forward = 0;
+      _walk_Forward = 0;
     }
   }
   //-------------------------------------------------//
@@ -237,11 +237,11 @@ void program_Biped() {
   //-------------------------------------------------//
   if (atras) {
     ESP32Biped.walk_Backward(velocidad);
-    walk_Backward = 1;
+    _walk_Backward = 1;
   } else {
-    if (walk_Backward) {
+    if (_walk_Backward) {
       ESP32Biped.standby_Mode();
-      walk_Backward = 0;
+      _walk_Backward = 0;
     }
   }
   //-------------------------------------------------//
@@ -249,11 +249,11 @@ void program_Biped() {
   //-------------------------------------------------//
   if (derecha) {
     ESP32Biped.turn_Right(velocidad);
-    turn_Right = 1;
+    _turn_Right = 1;
   } else {
-    if (turn_Right) {
+    if (_turn_Right) {
       ESP32Biped.standby_Mode();
-      turn_Right = 0;
+      _turn_Right = 0;
     }
   }
   //-------------------------------------------------//
@@ -261,11 +261,11 @@ void program_Biped() {
   //-------------------------------------------------//
   if (izquierda) {
     ESP32Biped.turn_Left(velocidad);
-    turn_Left = 1;
+    _turn_Left = 1;
   } else {
-    if (turn_Left) {
+    if (_turn_Left) {
       ESP32Biped.standby_Mode();
-      turn_Left = 0;
+      _turn_Left = 0;
     }
   }
   //-------------------------------------------------//
@@ -276,7 +276,7 @@ void program_distance() {
 }
 
 void program_touch() {
-  if (ESP32Biped.touch(50) && enable == 1) {
+  if (ESP32Biped.touch(50) && (enable == 1)) {
     // Generar un índice aleatorio para elegir un mensaje
     int indice = random(0, 5);  // Selecciona un índice aleatorio entre 0 y 4
     Blynk.virtualWrite(V8, mensajes[indice]);
