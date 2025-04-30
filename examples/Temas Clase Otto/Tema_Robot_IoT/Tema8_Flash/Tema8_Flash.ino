@@ -25,7 +25,7 @@ Preferences preferences;
 
 void setup() {
   //-------------------------------------------------//
-  //Configurar la PC comunicación serial a 9600 baud
+  //Configurar la comunicación serial a 9600 baud
   Serial.begin(115200);
   //-------------------------------------------------//
 
