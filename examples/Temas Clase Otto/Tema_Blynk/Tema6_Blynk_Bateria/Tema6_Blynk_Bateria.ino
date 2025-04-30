@@ -25,7 +25,7 @@ Ticker Timer_Bateria;
 
 void setup() {
   //-------------------------------------------------//
-  //Configurar  la comunicación Serial a 9600 baud
+  //Configurar  la comunicación Serial a 9600 baudios
   Serial.begin(9600);
   //-------------------------------------------------//
 
