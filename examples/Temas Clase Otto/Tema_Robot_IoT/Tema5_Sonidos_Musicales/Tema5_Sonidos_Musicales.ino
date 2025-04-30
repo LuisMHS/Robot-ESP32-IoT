@@ -23,7 +23,7 @@ void setup() {
   //-------------------------------------------------//
   //Inicializar el ESPBiped
   ESPBiped.begin();
-  //Inicializar la PC comunicación serial
+  //Inicializar la comunicación serial
   Serial.begin(9600);
   //-------------------------------------------------//
 }
