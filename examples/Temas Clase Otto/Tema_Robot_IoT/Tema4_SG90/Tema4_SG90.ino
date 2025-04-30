@@ -21,7 +21,7 @@ Robot_IoT ESP32Biped;
 
 void setup() {
   //-------------------------------------------------//
-  //Inicializar la PC comunicación serial
+  //Inicializar la comunicación serial
   Serial.begin(9600);
   //Inicializar el ESP32Biped
   ESP32Biped.begin();
