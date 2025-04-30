@@ -23,9 +23,9 @@ bool atras = 0;
 bool izquierda = 0;
 bool derecha = 0;
 bool _ _ _ _ _ _ _ _ _ = 0;
-bool walk_Backward = 0;
-bool turn_Right = 0;
-bool turn_Left = 0;
+bool _walk_Backward = 0;
+bool _turn_Right = 0;
+bool _turn_Left = 0;
 unsigned int _ _ _ _ _ _ _ _ _ = 0;
 bool enable = 1;
 int _ _ _ _ _ _ _ _ _ = 5;
@@ -49,7 +49,7 @@ BlynkTimer Timer_Bateria;
 
 void setup() {
   //-------------------------------------------------//
-  //Configurar la PC comunicación serial a 9600 baud
+  //Configurar la comunicación serial a 9600 baudios
   Serial._ _ _ _ _ _ _ _ _(9600);
   //-------------------------------------------------//
 
@@ -225,11 +225,11 @@ void program_ESP32Biped() {
   //-------------------------------------------------//
   if (adelante) {
     _ _ _ _ _ _ _ _ _.walk_Forward(velocidad);
-    walk_Forward = 1;
+    _walk_Forward = 1;
   } else {
-    if (walk_Forward) {
+    if (_walk_Forward) {
       _ _ _ _ _ _ _ _ _.standby_Mode();
-      walk_Forward = 0;
+      _walk_Forward = 0;
     }
   }
   //-------------------------------------------------//
@@ -237,11 +237,11 @@ void program_ESP32Biped() {
   //-------------------------------------------------//
   if (atras) {
     _ _ _ _ _ _ _ _ _.walk_Backward(velocidad);
-    walk_Backward = 1;
+    _walk_Backward = 1;
   } else {
-    if (walk_Backward) {
+    if (_walk_Backward) {
       _ _ _ _ _ _ _ _ _.standby_Mode();
-      walk_Backward = 0;
+      _walk_Backward = 0;
     }
   }
   //-------------------------------------------------//
@@ -249,11 +249,11 @@ void program_ESP32Biped() {
   //-------------------------------------------------//
   if (derecha) {
     _ _ _ _ _ _ _ _ _.turn_Right(velocidad);
-    turn_Right = 1;
+    _turn_Right = 1;
   } else {
-    if (turn_Right) {
+    if (_turn_Right) {
       _ _ _ _ _ _ _ _ _.standby_Mode();
-      turn_Right = 0;
+      _turn_Right = 0;
     }
   }
   //-------------------------------------------------//
@@ -276,7 +276,7 @@ void program_distance() {
 }
 
 void program_touch() {
-  if (_ _ _ _ _ _ _ _ _.touch(50) && enable == 1) {
+  if (_ _ _ _ _ _ _ _ _.touch(50) && (enable == 1)) {
     // Generar un índice aleatorio para elegir un mensaje
     int indice = random(0, 5);  // Selecciona un índice aleatorio entre 0 y 4
     _ _ _ _ _ _ _ _ _.virtualWrite(V8, mensajes[indice]);
