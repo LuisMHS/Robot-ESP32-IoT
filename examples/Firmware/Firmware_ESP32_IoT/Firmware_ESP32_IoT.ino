@@ -30,7 +30,7 @@ BlynkTimer Timer_Voltaje;
 
 void setup() {
   //-------------------------------------------------//
-  //Configurar la PC comunicación serial a 9600 baud
+  //Configurar la comunicación serial a 9600 baudios
   Serial.begin(9600);
   //-------------------------------------------------//
 
