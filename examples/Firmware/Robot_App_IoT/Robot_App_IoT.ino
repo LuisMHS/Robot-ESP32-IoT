@@ -29,7 +29,6 @@ bool _turn_Left = 0;
 unsigned int selector = 0;
 bool enable = 1;
 int velocidad = 5;
-bool Calibrador=0;
 // Crear un arreglo de mensajes aleatorios
 const char* mensajes[] = {
   "Hola soy ESP32Biped ESP32",
@@ -93,7 +92,7 @@ void loop() {
 //Función donde Notifica cuando el dispositivo, como un ESP32, se ha conectado correctamente al servidor de Blynk
 BLYNK_CONNECTED() {
   //Blynk actualiza el valor actual del pin virtual V0, V1 cuando se conecte al servidor de Blynk
-  Blynk.syncVirtual(V0, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10, V11, V12, V13);
+  Blynk.syncVirtual(V0, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10, V11, V12, V13, V14);
 }
 //-------------------------------------------------//
 
@@ -220,17 +219,6 @@ BLYNK_WRITE(V14) {
   velocidad = param.asInt();
 }
 //-------------------------------------------------//
-
-//-------------------------------------------------//
-BLYNK_WRITE(V16) {
-  Calibrador = param.asInt();
-  if(Calibrador){
-    ESP32Biped.save_Angle();
-    Blynk.virtualWrite(V16, 0);
-  }
-}
-//-------------------------------------------------//
-
 
 //-------------------------------------------------//
 void program_Biped() {
