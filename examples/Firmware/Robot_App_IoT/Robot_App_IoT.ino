@@ -29,6 +29,7 @@ bool _turn_Left = 0;
 unsigned int selector = 0;
 bool enable = 1;
 int velocidad = 5;
+bool Calibrador=0;
 // Crear un arreglo de mensajes aleatorios
 const char* mensajes[] = {
   "Hola soy ESP32Biped ESP32",
@@ -219,6 +220,17 @@ BLYNK_WRITE(V14) {
   velocidad = param.asInt();
 }
 //-------------------------------------------------//
+
+//-------------------------------------------------//
+BLYNK_WRITE(V16) {
+  Calibrador = param.asInt();
+  if(Calibrador){
+    ESP32Biped.save_Angle();
+    Blynk.virtualWrite(V16, 0);
+  }
+}
+//-------------------------------------------------//
+
 
 //-------------------------------------------------//
 void program_Biped() {
