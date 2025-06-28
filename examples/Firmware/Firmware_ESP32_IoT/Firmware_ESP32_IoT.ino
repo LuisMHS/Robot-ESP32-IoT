@@ -41,7 +41,7 @@ void setup() {
 
   //-------------------------------------------------//
   // Conectarce a Blynk con SSID y Contraseña de la red Wi-Fi
-  Blynk.begin(BLYNK_AUTH_TOKEN, "Taller robotica", ".*89LuisUnivLM");
+  Blynk.begin(BLYNK_AUTH_TOKEN, "***********", "***********");
   //-------------------------------------------------//
 
   //-------------------------------------------------//
