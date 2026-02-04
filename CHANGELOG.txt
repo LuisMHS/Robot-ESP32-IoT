@@ -1,5 +1,5 @@
 RobotESP32IoT 0.0.5 - 2026.02.04
-* Actualizacion del firmware del robot IoT
+* Actualizacion del firmware Robot_App_IoT.ino
 
 RobotESP32IoT 0.0.4 - 2025.04.20
 * Cambios en los códigos de los Tema_Robot_IoT
@@ -18,4 +18,5 @@ OttoESP32IoT 0.0.2 - 2024-07-26
 
 OttoESP32IoT 0.0.1 - 2024-01-05 
 * Se desarollo la librería
+
 
