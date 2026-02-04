@@ -29,21 +29,12 @@ bool _turn_Left = 0;
 unsigned int selector = 0;
 bool enable = 1;
 int velocidad = 5;
-// Crear un arreglo de mensajes aleatorios
-const char* mensajes[] = {
-  "Hola soy ESP32Biped ESP32",
-  "¡Saludos desde ESP32Biped!",
-  "¡Toque recibido!",
-  "Bienvenido al mundo de ESP32Biped",
-  "ESP32Biped te saluda con un toque"
-};
+
 //-------------------------------------------------//
 
 //----------------------Objeto---------------------//
 Robot_IoT ESP32Biped;
 BlynkTimer Timer_Biped;
-BlynkTimer Timer_Ultrasonido;
-BlynkTimer Timer_Touch;
 BlynkTimer Timer_Bateria;
 //-------------------------------------------------//
 
@@ -67,8 +58,6 @@ void setup() {
   //Configurar el timer
 
   Timer_Biped.setInterval(1, program_Biped);
-  Timer_Ultrasonido.setInterval(60000, program_distance);
-  Timer_Touch.setInterval(10, program_touch);
   Timer_Bateria.setInterval(70000, program_Bateria);
   //-------------------------------------------------//
 }
@@ -82,8 +71,6 @@ void loop() {
   //-------------------------------------------------//
   //Inicicar el timer
   Timer_Biped.run();
-  Timer_Ultrasonido.run();
-  Timer_Touch.run();
   Timer_Bateria.run();
   //-------------------------------------------------//
 }
@@ -150,8 +137,19 @@ BLYNK_WRITE(V5) {  //Pie Derecho
 //-------------------------------------------------//
 
 //-------------------------------------------------//
+BLYNK_WRITE(V6) {  //Calibrador
+  // Obtener el valor numérico del pin virtual V5 con param.asInt()
+  // Asignar el valor obtenido a la función angle_LegFoot para mover el ángulo de la pie derecho
+  ESP32Biped.angle_RightFoot(param.asInt());
+  if(param.asInt()){
+     ESP32Biped.
+  }
+}
+//-------------------------------------------------//
+
+//-------------------------------------------------//
 // Función que se ejecuta cuando hay un cambio en el valor del pin virtual V6
-BLYNK_WRITE(V6) {  // selector
+BLYNK_WRITE(V8) {  // selector
   selector = param.asInt();
   // Serial.println(param.asInt());
   //-------------------------------------------------//
@@ -215,7 +213,7 @@ BLYNK_WRITE(V13) {
 //-------------------------------------------------//
 
 //-------------------------------------------------//
-BLYNK_WRITE(V14) {
+BLYNK_WRITE(V9) {
   velocidad = param.asInt();
 }
 //-------------------------------------------------//
@@ -270,23 +268,7 @@ void program_Biped() {
   }
   //-------------------------------------------------//
 }
-//-------------------------------------------------//
-void program_distance() {
-  Blynk.virtualWrite(V7, ESP32Biped.ultrasound());
-}
 
-void program_touch() {
-  if (ESP32Biped.touch(50) && (enable == 1)) {
-    // Generar un índice aleatorio para elegir un mensaje
-    int indice = random(0, 5);  // Selecciona un índice aleatorio entre 0 y 4
-    Blynk.virtualWrite(V8, mensajes[indice]);
-    // Desactivar la variable enable para evitar que el mensaje se repita
-    enable = 0;
-  } else {
-    // Si el toque ya fue detectado y el mensaje fue enviado, restablecer enable
-    enable = 1;
-  }
-}
 void program_Bateria() {
-  Blynk.virtualWrite(V9, ESP32Biped.battery(2.8358));
+  Blynk.virtualWrite(V14, ESP32Biped.battery(2.8358));
 }
