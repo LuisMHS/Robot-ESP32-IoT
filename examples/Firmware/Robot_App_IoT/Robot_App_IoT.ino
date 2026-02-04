@@ -27,7 +27,6 @@ bool _walk_Backward = 0;
 bool _turn_Right = 0;
 bool _turn_Left = 0;
 unsigned int selector = 0;
-bool enable = 1;
 int velocidad = 5;
 
 //-------------------------------------------------//
@@ -138,11 +137,10 @@ BLYNK_WRITE(V5) {  //Pie Derecho
 
 //-------------------------------------------------//
 BLYNK_WRITE(V6) {  //Calibrador
-  // Obtener el valor numérico del pin virtual V5 con param.asInt()
-  // Asignar el valor obtenido a la función angle_LegFoot para mover el ángulo de la pie derecho
-  ESP32Biped.angle_RightFoot(param.asInt());
-  if(param.asInt()){
-     ESP32Biped.
+  // Calibrar los ángulos del robot bipedo
+   if(param.asInt()){
+     ESP32Biped.save_Angle();
+     Blynk.virtualWrite(V6, 0);
   }
 }
 //-------------------------------------------------//
