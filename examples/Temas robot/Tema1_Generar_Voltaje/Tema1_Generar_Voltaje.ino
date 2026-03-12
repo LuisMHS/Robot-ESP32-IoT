@@ -44,8 +44,8 @@ void loop() {
   Serial.print("Nombre:");
   Serial.println("Luis");
   //-------------------------------------------------//
-  t = millis();  // Medir el tiempo en la línea 44 en milisegundos
-  Serial.print("Tiempo: en la línea 44:");
+  t = millis();  // Medir el tiempo en la línea 47 en milisegundos
+  Serial.print("Tiempo: en la línea 47:");
   Serial.println(t);
   //-------------------------------------------------//
   //Creación de variable local en la función loop
