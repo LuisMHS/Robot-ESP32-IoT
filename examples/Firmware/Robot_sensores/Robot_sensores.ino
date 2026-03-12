@@ -7,12 +7,12 @@
    @Placa: ESP32 WROOM genérico
    @Version código:0.0.1
 */
+//********No conectar los micro servo SG90*********//
 
 //----------------------Header---------------------//
 //Incluir el archivo Robot_IoT.h de la librería RobotESP32IoT
 #include <Robot_IoT.h>
 //-------------------------------------------------//
-
 //------------------Variable-----------------------//
 bool estado = 0;
 //-------------------------------------------------//
