@@ -40,23 +40,23 @@ void setup() {
 }
 
 void loop() {
-  /*
+  
   ta = millis();                            //lectura del tiempo actual
   t = (ta - tp);                            //tiempo transcurrido
   if (t >= 100) {                           //Medir el touch cada 100ms
     Serial.println(ESPBiped.touch_Read());  //Ver los valor numerico del touch del pin D4
     tp = ta;                                //Actualizar el tiempo pasado con el tiempo actual
   }
-  */
+  
   //-------------------------------------------------//
   //Obtener el valor promedio al tocar y dejar de tocar
-  touch = ESPBiped.touch(50);
+  touch = ESPBiped.touch(70);
   //-------------------------------------------------//
 
   //-------------------------------------------------//
   while (touch) {
     //Obtener el valor promedio al tocar y dejar de tocar
-    touch = ESPBiped.touch(50);
+    touch = ESPBiped.touch(70);
     ESPBiped.walk_Forward(3);  //ESPBiped camina hacia adelante
   }
   //-------------------------------------------------//
