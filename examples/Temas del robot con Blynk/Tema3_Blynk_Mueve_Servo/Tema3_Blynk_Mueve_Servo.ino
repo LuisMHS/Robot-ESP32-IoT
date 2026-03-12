@@ -5,7 +5,7 @@
    @Version ESP32: 3.1.1
    @Fecha: 12/03/2026 
    @Placa: ESP32 WROOM genérico
-   @Version código:0.0.1
+   @Version código:0.0.2
 */
 
 
