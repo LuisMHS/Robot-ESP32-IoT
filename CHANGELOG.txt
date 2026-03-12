@@ -1,6 +1,6 @@
 RobotESP32IoT 0.0.6 - 2026.03.11
 *Actualización del firmware, se cambio el firmware_ESP32_IoT y se agregaron dos códigos Robot_parado y Robot_sensores
-*Se ordeno la carpeta de example
+*Se ordeno la carpeta de examples
 
 RobotESP32IoT 0.0.5 - 2026.02.04
 * Actualización del firmware Robot_App_IoT.ino
@@ -22,6 +22,7 @@ OttoESP32IoT 0.0.2 - 2024-07-26
 
 OttoESP32IoT 0.0.1 - 2024-01-05 
 * Se desarollo la librería
+
 
 
 
