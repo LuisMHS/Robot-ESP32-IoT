@@ -3,7 +3,7 @@
    @Author: Luis Miguel Hernández Samaniego
    @Arduino: 2.3.8
    @Version ESP32: 3.1.1
-   @Fecha: 12/03/2026 
+   @Fecha: 13/03/2026 
    @Placa: ESP32 WROOM genérico
    @Version código:0.0.5
 */
@@ -53,7 +53,7 @@ void setup() {
 
   //-------------------------------------------------//
   // Conectarce a Blynk con SSID y Contraseña de la red Wi-Fi
-  Blynk.begin(BLYNK_AUTH_TOKEN, "Taller robotica", ".*89LuisUnivLM");
+  Blynk.begin(BLYNK_AUTH_TOKEN, "***********", "************");
   //-------------------------------------------------//
 
   //-------------------------------------------------//
