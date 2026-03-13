@@ -17,7 +17,7 @@
 String txt = "Voltaje de calibración:";  //Asignar un texto o cadena de caracteres a la variable txt
 int tiempo = 400;                        //Variable tiempo RANGO:-2,147,483,648 a 2,147,483,647
 unsigned long t = 0;                     //Rango: 0 a 4,294,967,295
-float factor = 2.8358;                   //Es de 4 byte y permite trabajar numeros con 6 a 7 decimales, incluido el decimal
+float factor = 1;                   //Es de 4 byte y permite trabajar numeros con 6 a 7 decimales, incluido el decimal
 //-------------------------------------------------//
 
 //-------------------------------------------------//
